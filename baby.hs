@@ -202,11 +202,6 @@ collatz_chain n
     | even n = n : collatz_chain (n `div` 2)
     | odd n  = n : collatz_chain (n * 3 + 1)
 
-
-(|>) :: (a -> b -> c) -> b -> a -> c
-(|>) = flip    
-
-
 foldl' :: (t1 -> t2 -> t1) -> t1 -> [t2] -> t1
 foldl' _ acc [] = acc
 foldl' f acc (x:xs) = foldl' f (f acc x) xs 
